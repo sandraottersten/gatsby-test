@@ -76,3 +76,5 @@ fields:
     max: 
     labelField: 
   label: work_experience
+pages:
+- content/posts/hdkwdh.md
