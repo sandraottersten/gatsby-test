@@ -1,4 +1,78 @@
 ---
 label: testing
 hide_body: true
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: introduction
+- name: work_experience
+  type: field_group_list
+  fields:
+  - name: client
+    type: text
+    config:
+      required: false
+    label: client
+  - name: duration
+    type: text
+    config:
+      required: false
+    label: duration
+  - name: role
+    type: text
+    config:
+      required: false
+    label: role
+  - name: assignments
+    type: field_group_list
+    fields:
+    - name: client
+      type: text
+      config:
+        required: false
+      label: client
+    - name: duration
+      type: text
+      config:
+        required: false
+      label: duration
+    - name: role
+      type: text
+      config:
+        required: false
+      label: role
+    - name: summary
+      type: textarea
+      default: ''
+      config:
+        required: false
+        wysiwyg: false
+        schema:
+          format: markdown
+      label: summary
+    - name: techniques
+      type: text
+      config:
+        required: false
+      label: techniques
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: assignments
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: work_experience
