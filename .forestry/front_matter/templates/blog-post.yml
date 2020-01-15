@@ -2,39 +2,59 @@
 label: Blog Post
 hide_body: false
 fields:
-- type: text
-  name: title
-  label: title
-- name: author
-  type: select
-  default: ''
+- name: work-experience
+  type: field_group_list
+  fields:
+  - name: client
+    type: field_group_list
+    fields:
+    - name: duration
+      type: text
+      config:
+        required: false
+      label: duration
+    - name: client
+      type: text
+      config:
+        required: false
+      label: client
+    - name: assignments
+      type: field_group_list
+      fields:
+      - name: client
+        type: text
+        config:
+          required: false
+        label: client
+      - name: role
+        type: text
+        config:
+          required: false
+        label: role
+      - name: summary
+        type: textarea
+        default: ''
+        config:
+          required: false
+          wysiwyg: false
+          schema:
+            format: markdown
+        label: summary
+      config:
+        min: 
+        max: 
+        labelField: 
+      label: assignments
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: client
   config:
-    required: true
-    options: []
-    source:
-      type: documents
-      section: author-list
-      file: content/data/authors.yaml
-      path: authors
-  label: author
-  description: Enter author of post
-- name: date
-  type: datetime
-  label: date
-  description: Date post was created
-  config:
-    required: false
-    date_format: 
-    time_format: 
-    display_utc: false
-  default: now
-- name: hero_image
-  type: file
-  config:
-    maxSize: '10'
-  label: hero image
-  description: Enter hero image for blog post here
-  default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+    min: 
+    max: 
+    labelField: 
+  label: work-experience
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
