@@ -77,4 +77,5 @@ fields:
     labelField: 
   label: work_experience
 pages:
+- content/posts/Test assignment.md
 - content/posts/hdkwdh.md
